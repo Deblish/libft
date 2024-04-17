@@ -6,16 +6,21 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:08:36 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/17 15:17:57 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:48:18 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdio.h>
+#include "libft.h"
 
 int main (void)
 {
-	//printf("%i", 
-	ft_isalnum("this is alphanumeric");		
-	return 0;
+	int	i;
+	i = 0;
+	while(i < 128)
+	{
+		printf("%c is %i\n",i, ft_isalnum(i));
+		i++;
+	}
+	return (0);
 }

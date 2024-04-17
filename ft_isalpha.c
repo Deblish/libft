@@ -6,18 +6,14 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:54:45 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/17 15:02:38 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:40:01 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char *str)
+int	ft_isalpha(int c)
 {
 	//The value of the argument must be representable as an unsigned char or the value of E0F
-	while (*str)
-	{
-		if ((*str < 'A' || *str > 'Z') && (*str < 'a' || *str > 'z'))
-			return (0);
-		str++;
-	}
+	if ((c < 65 || c > 90) && (c < 97 || c > 122))
+		return (0);
 	return (1);
 }
