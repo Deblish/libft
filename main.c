@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:08:36 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/17 19:20:47 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/17 19:37:32 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main (void)
 	i = -1;
 	while(i < 128)
 	{
-		printf("%c is %i\n",i, ft_isalnum(i));
+		printf("%c is %i\n",i, ft_isascii(i));
 		i++;
 	}
 	return (0);
