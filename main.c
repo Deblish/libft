@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:08:36 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/17 15:12:01 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:17:57 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 int main (void)
 {
-	printf("%i", ft_isalnum("this is alphanumeric"));	
+	//printf("%i", 
+	ft_isalnum("this is alphanumeric");		
 	return 0;
 }
