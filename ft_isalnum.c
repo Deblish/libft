@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 13:49:23 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/17 14:59:30 by aapadill         ###   ########.fr       */
+/*   Created: 2024/04/17 14:51:41 by aapadill          #+#    #+#             */
+/*   Updated: 2024/04/17 15:04:41 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(char *str)
+#include "libft.h"
+
+int ft_isalnum(char *str)
 {
-	//The value of the argument must be representable as an unsigned char or the value of E0F
-	while(*str)
-	{
-		if (*str < '0' || *str > '9')
-			return (0);
-		str++; 
-	}
-	return (1);
+	if (ft_isalpha(*str) && ft_isdigit(*str))
+		return (1);
+	else
+		return (0);	
 }
