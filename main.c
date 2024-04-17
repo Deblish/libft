@@ -1,15 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/17 14:48:55 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/17 15:12:15 by aapadill         ###   ########.fr       */
+/*   Created: 2024/04/17 15:08:36 by aapadill          #+#    #+#             */
+/*   Updated: 2024/04/17 15:12:01 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char *str);
-int	ft_isdigit(char *str);
-int ft_isalnum(char *str);
+#include "libft.h"
+#include <stdio.h>
+
+int main (void)
+{
+	printf("%i", ft_isalnum("this is alphanumeric"));	
+	return 0;
+}
