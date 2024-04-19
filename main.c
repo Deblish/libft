@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:08:36 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/19 10:01:03 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/19 14:59:48 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 int main (void)
 {
 	int	i;
+	char *arr;
+	
 	i = -1;
 	while(i < 128)
 	{
@@ -24,22 +26,12 @@ int main (void)
 		i++;
 	}
 
-	printf("strlen\n");
-	printf("the size of the word is %zu\n", ft_strlen("abc"));
-	
 	printf("memset\n");
 	i = 0;
-	int size = 1;
-	int arr[size];
-	while(i < size)
-		arr[i++] = 0;
-	int c = 0;
-	i = 0;
-	memset(arr, c, sizeof(arr));
-	while (i < (int)sizeof(arr))
-	{
-		printf("%i", arr[i]);
-		i++;
-	}
+	arr = (char *)malloc(9 * sizeof(char));	
+	ft_memset(arr, 48, 3);
+	arr[8] = '\0';
+	printf("%s", arr);
+	printf("the size of the word is %zu\n", strlen(arr));
 	return (0);
 }
