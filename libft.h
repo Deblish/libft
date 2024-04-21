@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:48:55 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/19 12:27:37 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/21 17:57:11 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ int ft_isascii(int c);
 int ft_isprint(int c);
 size_t ft_strlen(const char *s);
 void *ft_memset(void *b, int c, size_t len);
+void ft_bzero(void *s, size_t n);
 
 #endif
