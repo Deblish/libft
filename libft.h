@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:48:55 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/22 16:44:32 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/22 17:48:03 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 void *ft_memmove(void *dst, const void *src, size_t len);
 size_t strlcpy(char *dst, const char *src, size_t dstsize);
 size_t strlcat(char *dst, const char *src, size_t dstsize);
-
+int ft_toupper(int c);
+int ft_tolower(int c);
 
 #endif
