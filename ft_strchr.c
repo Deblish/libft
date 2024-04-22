@@ -6,11 +6,11 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 17:57:54 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/22 18:23:51 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/22 19:25:13 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *strchr(const char *s, int c)
+char *ft_strchr(const char *s, int c)
 {
     while (*s && *s != (char)c)
 		s++;
