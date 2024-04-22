@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:48:55 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/21 23:20:08 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:14:56 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ size_t ft_strlen(const char *s);
 void *ft_memset(void *b, int c, size_t len);
 void ft_bzero(void *s, size_t n);
 void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
+void *ft_memmove(void *dst, const void *src, size_t len);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 08:07:06 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/22 08:58:32 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/22 11:15:30 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,28 +16,15 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 {
 	char *temp_dst;
 	const char *temp_src;
-	const char *aux;
-	int overlap;
-	size_t i;
 
-	temp_dst = (char *)dst + len - 1;
-	temp_src = (const char *)src + len - 1;
-	aux = (const char *)src;
-	overlap = 0;
-	i = len;
-
-	while(i--)
-	{
-		if (aux == dst)
-			overlap = 1;
-		else
-			aux++;
-	}
-
-	if (overlap)
+	temp_dst = (char *)dst;
+	temp_src = (const char *)src;
+	
+	if ((const char *)src < (char *)dst)
 		while(len--)
-			*temp_dst-- = *temp_src--;
+			*(temp_dst + len) = *(temp_src + len);
 	else
-		ft_memcpy(dst, src, len);
+		while(len--)
+			*temp_dst++ = *temp_src++;
 	return dst;
 }
