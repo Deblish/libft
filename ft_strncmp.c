@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 17:57:54 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/23 14:00:02 by aapadill         ###   ########.fr       */
+/*   Created: 2024/04/23 12:15:04 by aapadill          #+#    #+#             */
+/*   Updated: 2024/04/23 12:28:40 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(const char *s, int c)
+int	ft_strncmp(const char	*s1, const char	*s2, size_t n)
 {
-    while (*s && *s != (char)c)
-		s++;
-    if (!*s && c != 0)
-		return NULL;
-	return (char *)s;
+	while ((*s1 || *s2) && n)
+	{
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
+		n--;
+	}
+	return (0);
 }

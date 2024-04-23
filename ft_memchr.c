@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/22 17:57:54 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/23 14:00:02 by aapadill         ###   ########.fr       */
+/*   Created: 2024/04/23 13:36:09 by aapadill          #+#    #+#             */
+/*   Updated: 2024/04/23 14:19:10 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(const char *s, int c)
+void *ft_memchr(const void *s, int c, size_t n)
 {
-    while (*s && *s != (char)c)
-		s++;
-    if (!*s && c != 0)
-		return NULL;
-	return (char *)s;
+	unsigned char *str;
+	
+	str = (unsigned char)s;
+	while (n--)
+	{
+		if (*str == (unsigned char)c)
+			return str;
+		str++;
+	}
+	return NULL;
 }
