@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 18:16:25 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/23 19:58:22 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/23 20:54:25 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		haystack++;
 		len--;
 	}
-	return (0);
+	return ((void *)0);
 }
