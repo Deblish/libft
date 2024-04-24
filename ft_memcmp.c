@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 15:35:25 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/24 12:42:35 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/24 12:48:10 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		a++;
 		b++;
 	}
-	return (NULL);
+	return (0);
 }
