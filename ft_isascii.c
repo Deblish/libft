@@ -6,13 +6,13 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 19:35:13 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/17 19:42:31 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/23 22:51:51 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-	if (c > -1 && c < 128)
+	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }

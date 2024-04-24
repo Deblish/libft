@@ -6,11 +6,11 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:49:23 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/18 21:56:34 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/23 22:52:11 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if (c < 48 || c > 57)
 		return (0);

@@ -6,13 +6,13 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 17:34:38 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/22 17:40:57 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/24 12:41:09 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
-		return c - 'a' + 'A';
+		return (c - 'a' + 'A');
 	return (c);
 }

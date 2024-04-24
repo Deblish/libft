@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 18:16:25 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/23 20:54:25 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/24 12:38:22 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	const char	*haystack_aux;
 	const char	*needle_aux;
-	size_t	n;
+	size_t		n;
 
 	if (!*needle)
-		return (char *)haystack;
+		return ((char *)haystack);
 	while (*haystack && len)
 	{
 		haystack_aux = haystack;
@@ -32,9 +32,9 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			n--;
 		}
 		if (!*needle_aux)
-			return (char *)haystack;
+			return ((char *)haystack);
 		haystack++;
 		len--;
 	}
-	return ((void *)0);
+	return (NULL);
 }
