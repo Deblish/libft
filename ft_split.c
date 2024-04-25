@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:59:00 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/25 17:04:34 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:58:46 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,29 @@ char	**ft_split(char const *s, char c)
 
 	q_words = 0;
 	aux = s;
-	while (ft_strchr(aux, c))
+	while (*aux)
 	{
-		aux = ft_strchr(aux, c) + 1;
-		q_words++;
+		while (*aux == c)
+			aux++;
+		if (*aux != 0)
+			q_words++;
+		while (*aux && *aux != c)
+			aux++;
 	}
 	words = malloc((q_words + 1) * sizeof(char *));
+	if(!words)
+		return (NULL);
 	aux = s;
 	i = 0;
-	while (ft_strchr(aux, c))
+	while (i < q_words)
 	{
+		while (*aux == c)
+			aux++;
 		found_at = ft_strchr(aux, c);
-		word_end = found_at - 1;
-		words[i] = ft_substr(aux, word_end - aux, found_at - aux);
-		aux = found_at + 1;
-		i++;
+		//word_end = found_at - 1;
+		//words[i] = ft_substr(aux, word_end - aux, found_at - aux);
+		//aux = found_at + 1;
+		//i++;
 	}
 	words[i] = NULL;
 	return (words);
