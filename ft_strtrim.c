@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:01:31 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/25 14:18:39 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/25 14:42:21 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	char const	*start;
 	char const	*end;
-	char const	*aux;
 
+	if (!s1 || !set)
+		return (NULL);
 	start = s1;
 	end = s1 + ft_strlen(s1) - 1;
-	aux = set;
-	while (*start == *aux)
-	{
+	while (*start && ft_strchr(set, *start))
 		start++;
-		aux++;
-	}
-	aux = set;
-	while (*end == *aux)
-	{
+	while (*end && ft_strchr(set, *end))
 		end--;
-		aux++;
-	}
 	if (start > end)
 		return (ft_strdup(""));
 	return (ft_substr(s1, start - s1, end - start + 1));
