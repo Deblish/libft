@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:08:36 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/25 11:24:29 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/25 12:14:13 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,13 @@ int main (void)
 	//}
 
 	//printf("memset\n");
-	char arr[] = "ThisIsAString"; 
+	char *arr = "ThisIsAString";
+	char *arr2 = "2ndStringStartingHere";
 	//ft_memset(arr, 1, 3);
 	//printf("the size of the word is %zu\n", ft_strlen(arr));
 	//printf("%s\n", arr);
 	//ft_bzero(arr, 5);
 	//printf("%s", arr);
-	printf("%s", ft_substr(arr, 3, 13));
+	printf("%s", ft_strjoin(arr, arr2));
 	return (0);
 }
