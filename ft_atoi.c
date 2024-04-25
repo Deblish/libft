@@ -6,11 +6,11 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 12:55:08 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/24 13:04:20 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/25 11:17:43 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static char	*ft_isspace(char *str)
+static const char	*ft_isspace(const char *str)
 {
 	while ((*str == '\t' || *str == '\n' || *str == '\v'
 			|| *str == '\r' || *str == '\f' || *str == 32) && str)
@@ -18,10 +18,10 @@ static char	*ft_isspace(char *str)
 	return (str);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
-	char	*start;
-	char	*end;
+	const char	*start;
+	const char	*end;
 	int		sign;
 	int		integer;
 
