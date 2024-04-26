@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:59:00 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/26 08:48:21 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/26 08:56:46 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ char	**ft_split(char const *s, char c)
 	size_t		q_words;
 	size_t	i;
 	const char	*aux;
-	char	*word_end;
 	char	**words;
 	char	*stop;
 
