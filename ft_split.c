@@ -6,56 +6,67 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:59:00 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/26 08:56:46 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:18:55 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_split(char const *s, char c)
+static size_t	word_counter(char const *s, char c)
 {
-	size_t		q_words;
 	size_t	i;
-	const char	*aux;
-	char	**words;
+
+	i = 0;
+	while (*s)
+	{
+		while (*s == c)
+			s++;
+		if (*s != 0)
+			i++;
+		while (*s && *s != c)
+			s++;
+	}
+	return (i);
+}
+
+static int	splitter(char **words, char const *s, char c, size_t q_words)
+{
+	size_t	i;
 	char	*stop;
 
-	q_words = 0;
-	aux = s;
-	while (*aux)
-	{
-		while (*aux == c)
-			aux++;
-		if (*aux != 0)
-			q_words++;
-		while (*aux && *aux != c)
-			aux++;
-	}
-	words = malloc((q_words + 1) * sizeof(char *));
-	if(!words)
-		return (NULL);
-	aux = s;
 	i = 0;
 	while (i < q_words)
 	{
-		while (*aux == c)
-			aux++;
-		stop = ft_strchr(aux, c);
+		while (*s == c)
+			s++;
+		stop = ft_strchr(s, c);
 		if (!stop)
-			stop = ft_strchr(aux, 0);
-		words[i] = ft_substr(aux, 0, stop - aux);
+			stop = ft_strchr(s, 0);
+		words[i] = ft_substr(s, 0, stop - s);
 		if (!words[i])
 		{
 			while (i > 0)
 				free(words[--i]);
 			free(words);
-			return (NULL);
+			return (1);
 		}
-		aux = stop;
-		if (*stop != 0)
-			aux++;
+		s = stop + (*stop != 0);
 		i++;
 	}
 	words[i] = NULL;
+	return (0);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	size_t	q_words;
+	char	**words;
+
+	q_words = word_counter(s, c);
+	words = malloc((q_words + 1) * sizeof(char *));
+	if (!words)
+		return (NULL);
+	if (splitter(words, s, c, q_words))
+		return (NULL);
 	return (words);
 }

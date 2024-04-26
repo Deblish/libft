@@ -6,9 +6,18 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 12:54:45 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/18 21:56:20 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/26 10:35:33 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+**
+** @brief Function description.
+**
+** @param paramName Description of the parameter.
+** @return Description of the return value.
+**
+*/
 
 int	ft_isalpha(int c)
 {
