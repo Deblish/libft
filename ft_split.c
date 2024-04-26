@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:59:00 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/26 14:18:55 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:49:10 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,14 @@ static int	splitter(char **words, char const *s, char c, size_t q_words)
 	char	*stop;
 
 	i = 0;
+	//stop = NULL;
 	while (i < q_words)
 	{
 		while (*s == c)
 			s++;
 		stop = ft_strchr(s, c);
 		if (!stop)
-			stop = ft_strchr(s, 0);
+			stop = ft_strchr(s, 0); //strchr might be wrong
 		words[i] = ft_substr(s, 0, stop - s);
 		if (!words[i])
 		{
@@ -62,6 +63,8 @@ char	**ft_split(char const *s, char c)
 	size_t	q_words;
 	char	**words;
 
+	//if (!s)
+	//	return NULL;
 	q_words = word_counter(s, c);
 	words = malloc((q_words + 1) * sizeof(char *));
 	if (!words)

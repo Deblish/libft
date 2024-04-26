@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:08:36 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/26 13:37:43 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:34:18 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,17 @@ int main (void)
 	//char *arr = "tring";
 	//char *arr2 = "String";
 	char **words;
+	char *str = NULL;
+	//char *str2 = "Esto es un string con espacios";
 	//ft_memset(arr, 1, 3);
 	//printf("the size of the word is %zu\n", ft_strlen(arr));
 	//printf("%s\n", arr);
 	//ft_bzero(arr, 5);
 	//printf("%s", arr);
 	//printf("%s", ft_strtrim(arr, arr2));
-	words = ft_split("deberia de cortarse en cada letra a, como aqui", 'a');
+	words = ft_split(str, ' ');
 	int i = 0;
-	while (words[i])
-	{
-		printf("%s\n", words[i]);
-		i++;
-	}
+	while (words)
+		printf("%p\n", words[i++]);
 	return (0);
 }
