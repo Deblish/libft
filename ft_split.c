@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:59:00 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/25 18:58:46 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/26 08:48:21 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	**ft_split(char const *s, char c)
 	const char	*aux;
 	char	*word_end;
 	char	**words;
-	char	*found_at;
+	char	*stop;
 
 	q_words = 0;
 	aux = s;
@@ -41,11 +41,21 @@ char	**ft_split(char const *s, char c)
 	{
 		while (*aux == c)
 			aux++;
-		found_at = ft_strchr(aux, c);
-		//word_end = found_at - 1;
-		//words[i] = ft_substr(aux, word_end - aux, found_at - aux);
-		//aux = found_at + 1;
-		//i++;
+		stop = ft_strchr(aux, c);
+		if (!stop)
+			stop = ft_strchr(aux, 0);
+		words[i] = ft_substr(aux, 0, stop - aux);
+		if (!words[i])
+		{
+			while (i > 0)
+				free(words[--i]);
+			free(words);
+			return (NULL);
+		}
+		aux = stop;
+		if (*stop != 0)
+			aux++;
+		i++;
 	}
 	words[i] = NULL;
 	return (words);
