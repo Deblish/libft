@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:59:00 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/27 11:28:05 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/27 11:36:41 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static size_t	word_counter(char const *s, char c)
 	size_t	i;
 
 	i = 0;
+	if(!s)
+		return (i);
 	while (*s)
 	{
 		while (*s == c)
@@ -35,7 +37,7 @@ static int	splitter(char **words, char const *s, char c, size_t q_words)
 	char	*stop;
 
 	i = 0;
-	while (i < q_words)
+	while (i < q_words && s)
 	{
 		while (*s == c)
 			s++;
@@ -62,14 +64,6 @@ char	**ft_split(char const *s, char c)
 	size_t	q_words;
 	char	**words;
 
-	if (!s)
-	{
-		words = malloc(sizeof(char *));
-		if (!words)
-			return (NULL);
-		words[0] = NULL;
-		return (words);
-	}
 	q_words = word_counter(s, c);
 	words = malloc((q_words + 1) * sizeof(char *));
 	if (!words)
