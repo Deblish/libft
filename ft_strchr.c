@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 17:57:54 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/24 12:44:07 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/26 15:54:49 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 char	*ft_strchr(const char *s, int c)
 {
+	if(!s)
+		return (NULL);
 	while (*s && *s != (char)c)
 		s++;
 	if (!*s && c != 0)
