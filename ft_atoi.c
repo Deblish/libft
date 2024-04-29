@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 12:55:08 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/29 14:01:06 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:18:13 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ int	ft_atoi(const char *str)
 
 	start = ft_isspace(str);
 	sign = 1;
-	while (*start == '+' || *start == '-')
+	if (*start == '+' || *start == '-')
 	{
 		if (*start == '-')
-			sign *= -1;
+			sign = -1;
 		start++;
 	}
 	end = start;
