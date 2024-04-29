@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 08:23:37 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/29 14:09:34 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:22:03 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,6 @@ char	*ft_itoa(int n)
 		n %= ft_exp(10, digits - j - 1);
 		j++;
 	}
+	str[digits + sign] = 0;
 	return (str);
 }
