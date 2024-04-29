@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 12:55:08 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/25 11:17:43 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/29 14:01:06 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	ft_atoi(const char *str)
 {
 	const char	*start;
 	const char	*end;
-	int		sign;
-	int		integer;
+	int			sign;
+	int			integer;
 
 	start = ft_isspace(str);
 	sign = 1;

@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 08:23:37 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/29 10:22:03 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/29 14:09:34 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,16 @@ static int	ft_digit_counter(int j)
 	return (i);
 }
 
+static int	signer(int n)
+{
+	int	sign;
+
+	sign = 0;
+	if (n < 0)
+		sign = 1;
+	return (sign);
+}
+
 char	*ft_itoa(int n)
 {
 	int		digits;
@@ -49,15 +59,12 @@ char	*ft_itoa(int n)
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	sign = 0;
-	if (n < 0)
-	{
-		sign = 1;
+	sign = signer(n);
+	if (sign)
 		n = -n;
-	}
 	digits = ft_digit_counter(n);
 	str = malloc((digits + sign + 1) * sizeof(char));
-	if(!str)
+	if (!str)
 		return (NULL);
 	if (sign)
 		str[0] = '-';

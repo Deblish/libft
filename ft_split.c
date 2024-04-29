@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:59:00 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/27 11:36:41 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/29 13:58:46 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static size_t	word_counter(char const *s, char c)
 	size_t	i;
 
 	i = 0;
-	if(!s)
+	if (!s)
 		return (i);
 	while (*s)
 	{

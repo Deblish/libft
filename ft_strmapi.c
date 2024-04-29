@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 10:22:52 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/29 13:16:34 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/29 14:02:24 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,22 +27,21 @@
 
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
 	char			*str;
 
-	if(!s || !f)
+	if (!s || !f)
 		return (NULL);
 	str = ft_strdup(s);
-	if(!str)
+	if (!str)
 		return (NULL);
-
 	i = 0;
 	while (str[i])
 	{
 		str[i] = f(i, str[i]);
 		i++;
 	}
-		return (str);
+	return (str);
 }
