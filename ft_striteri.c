@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 12:06:34 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/29 12:17:25 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/29 13:21:02 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,19 @@
 ** @return
 */
 
+#include "libft.h"
+
 void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
 
 	if(!s || !f)
-		return (NULL);
+		return ;
 
 	i = 0;
 	while (s[i])
-		s[i] = f(i, s[i++]);
+	{
+		f(i, s + i);
+		i++;
+	}
 }

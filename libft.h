@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:48:55 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/29 13:01:53 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/29 13:13:40 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+void ft_putnbr_fd(int n, int fd);
 
 #endif

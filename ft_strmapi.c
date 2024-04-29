@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 10:22:52 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/29 12:03:38 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/29 13:16:34 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = 0;
 	while (str[i])
-		str[i] = f(i, aux[i++]);
-	return (str);
+	{
+		str[i] = f(i, str[i]);
+		i++;
+	}
+		return (str);
 }
