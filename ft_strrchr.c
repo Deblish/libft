@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 19:23:51 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/24 12:40:12 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/29 21:20:41 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strrchr(const char *s, int c)
 			last = s;
 		s++;
 	}
-	if (!c)
+	if ((char)c == '\0')
 		return ((char *)s);
 	return ((char *)last);
 }

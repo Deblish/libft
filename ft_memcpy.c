@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 19:50:47 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/29 14:16:25 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/29 21:34:44 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char		*d;
 	const char	*s;
 
-	if (dst == NULL || src == NULL)
-		return (NULL);
+	if (!dst && !src)
+		return (0);
 	d = (char *)dst;
 	s = (const char *)src;
 	while (n--)
