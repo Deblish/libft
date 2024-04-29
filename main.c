@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:08:36 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/29 09:04:41 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/29 12:05:27 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ int main (void)
 	//int i = 0;
 	//while(words[i])
 	//	printf("%s\n", words[i++]);
-	char *str = ft_itoa(-2147483647);
+	//char *str = ft_itoa(-2147483647);
+	
 	printf("%s", str);
 	return (0);
 }
