@@ -6,11 +6,13 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 08:23:37 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/26 08:26:19 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/29 08:53:08 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_exponential(int base, int exp)
+#include "libft.h"
+
+static int	ft_exp(int base, int exp)
 {
 	int	i;
 	int	result;
@@ -25,7 +27,7 @@ int	ft_exponential(int base, int exp)
 	return (result);
 }
 
-int	ft_digit_counter(int j)
+static int	ft_digit_counter(int j)
 {
 	int	i;
 
@@ -38,31 +40,40 @@ int	ft_digit_counter(int j)
 	return (i);
 }
 
-void	ft_putnbr(int nb)
+char	*ft_itoa(int n)
 {
 	int		digits;
 	int		a;
 	int		b;
 	char	digit_char;
+	int		sign;
+	char	*str;
+	int		i;
+	int		j;
 
-	if (nb == -2147483648)
+	if (n == -2147483648)
+		return(ft_strdup("-2147483648"));
+	sign = 0;
+	if (n < 0)
 	{
-		write(1, "-2147483648", 11);
-		return ;
+		sign = 1;
+		n = -n;
 	}
-	if (nb < 0)
+	digits = ft_digit_counter(n);
+	str = malloc((digits + sign + 1) * sizeof(char));
+	i = digits;
+	if (sign)
+		str[0] = '-';
+	j = 0;
+	while (i--)
 	{
-		write(1, "-", 1);
-		nb = -nb;
+		b = (n % (ft_exp(10, i)));
+		a = (n - b);
+		digit_char = (a / (ft_exp(10, i))) + '0';
+		//write(1, &digit_char, 1);
+		str[j + sign] = digit_char;
+		n = b;
+		j++;
 	}
-	digits = ft_digit_counter(nb);
-	while (digits)
-	{
-		b = (nb % (ft_exponential(10, digits - 1)));
-		a = nb - b;
-		digit_char = (a / (ft_exponential(10, digits - 1))) + '0';
-		write(1, &digit_char, 1);
-		nb = b;
-		digits--;
-	}
+	return (str);
 }
