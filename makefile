@@ -14,12 +14,13 @@ B_OBJECTS = $(B_SOURCES:.c=.o)
 
 all: $(NAME)
 exe: $(EXECUTABLE)
-bonus: $(NAME)
+.PHONY: bonus
+bonus: .bonus
 
-$(NAME): ${B_OBJECTS}
-	$(AR) -r $@ $?
+.bonus: $(NAME) $(B_OBJECTS)
+	$(AR) $(NAME) $(B_OBJECTS)
 
-$(NAME): ${OBJECTS}
+$(NAME): $(OBJECTS)
 	$(AR) -r $@ $?
 
 $(EXECUTABLE): $(OBJECTS)
@@ -30,17 +31,12 @@ $(EXECUTABLE): $(OBJECTS)
 	cc $(CFLAGS) -c $?
 
 clean:
-	rm -f $(OBJECTS)
+	rm -f $(OBJECTS) $(B_OBJECTS) .bonus
 
-fclean:
-	rm -f $(EXECUTABLE) $(NAME)
-	rm -f $(OBJECTS)
+fclean: clean
+	rm -f $(EXECUTABLE) $(NAME) 
 
-re:
-	rm -f $(EXECUTABLE) $(NAME)
-	rm -f $(OBJECTS)
-	make all
-
+re: fclean all
 
 #main.o: main.c
 #	@echo "Compiling main"
