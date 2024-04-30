@@ -16,8 +16,8 @@ $(NAME): ${OBJECTS}
 
 $(EXECUTABLE): $(OBJECTS)
 	@echo "Linking object files, creating executable"
-	cc $(CFLAGS) $(OBJECTS) -o $(EXECUTABLE) 
-	
+	cc $(CFLAGS) $(OBJECTS) -o $(EXECUTABLE)
+
 %.o: %.c
 	cc $(CFLAGS) -c $?
 
@@ -26,9 +26,13 @@ clean:
 
 fclean:
 	rm -f $(EXECUTABLE) $(NAME)
+	rm -f $(OBJECTS)
 
 re:
-	fclean all
+	rm -f $(EXECUTABLE) $(NAME)
+	rm -f $(OBJECTS)
+	make all
+
 
 #main.o: main.c
 #	@echo "Compiling main"
