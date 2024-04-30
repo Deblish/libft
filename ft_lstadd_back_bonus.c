@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:12:08 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/30 15:16:49 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:30:09 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,15 @@
 
 #include "libft.h"
 
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*temp;
 
 	temp = *lst;
+	if (new == NULL)
+		return ;
+	if (*lst == NULL)
+		*lst = new;
 	if (temp && new)
 	{
 		while (temp->next != NULL)
