@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 10:52:50 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/30 11:09:19 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/30 12:55:28 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ t_list *ft_lstnew(void *content)
 	t_list	*lstptr;
 
 	lstptr = (malloc(sizeof(t_list)));
+	if (!lstptr)
+		return (NULL);
 	lstptr->content = content;
 	lstptr->next = NULL;
-	return (lstptr)
+	return (lstptr);
 }
