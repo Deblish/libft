@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 14:30:44 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/30 14:35:48 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/04/30 14:39:06 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@
 
 t_list *ft_lstlast(t_list *lst)
 {
-	while (lst != NULL)
+	if (lst == NULL)
+		return (NULL);
+	while (lst->next != NULL)
 		lst = lst->next;
 	return (lst);
 }
