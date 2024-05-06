@@ -6,9 +6,17 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 17:57:54 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/29 14:55:06 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/05/05 12:00:49 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** @description
+** 
+** @param
+**
+** @return
+*/
 
 #include "libft.h"
 
