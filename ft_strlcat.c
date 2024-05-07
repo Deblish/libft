@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 15:23:57 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/29 16:50:46 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/05/07 12:14:51 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 
 	srclen = ft_strlen(src);
+	if (!dst && !dstsize)
+		return (srclen);
 	dstlen = ft_strlen(dst);
 	i = dstlen;
 	if (!dstsize || dstlen >= dstsize)

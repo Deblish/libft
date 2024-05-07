@@ -6,9 +6,27 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 18:16:25 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/24 12:38:22 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/05/07 12:37:01 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** @description
+** Locates the first occurrence of the null-terminated string needle 
+** in the string haystack, where not more than len characters are searched.
+** Characters that appear after a ‘\0’ character are not searched. 
+**
+** @param
+** *haystack: null-terminated string
+** *needle: null terminated string
+** len: max quantity of characters to search
+**
+** @return
+** If needle is an empty string, haystack is returned;
+** If needle occurs nowhere in haystack, NULL is returned;
+** Otherwise a pointer to the first character of the first occurrence of 
+** needle is returned.
+*/
 
 #include "libft.h"
 
@@ -20,7 +38,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	if (!*needle)
 		return ((char *)haystack);
-	while (*haystack && len)
+	while (len && *haystack)
 	{
 		haystack_aux = haystack;
 		needle_aux = needle;

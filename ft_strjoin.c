@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 11:31:44 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/29 14:01:29 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/05/06 22:52:04 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*str;
 	char	*joined;
 
+	if (!s1 || !s2)
+		return (NULL);
 	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!str)
 		return (NULL);
