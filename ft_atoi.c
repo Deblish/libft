@@ -6,42 +6,64 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 12:55:08 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/29 17:18:13 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/05/07 21:07:52 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static const char	*ft_isspace(const char *str)
+#include "libft.h"
+
+static const char	*ft_jump_spaces(const char *str)
 {
-	while ((*str == '\t' || *str == '\n' || *str == '\v'
-			|| *str == '\r' || *str == '\f' || *str == 32) && str)
+	while (((*str >= 9 && *str <= 13) || (*str == 32)) && str)
 		str++;
 	return (str);
+}
+
+static int	ft_signer(const char c)
+{
+	if (c == '-')
+		return (-1);
+	if (ft_isdigit(c) || c == '+')
+		return (1);
+	return (0);
+}
+
+static int	ft_overflow_check(long long value, int digit, int sign)
+{
+	if (value > LLONG_MAX / 10 || (value == LLONG_MAX / 10 && digit > '7'))
+	{
+		if (sign == 1)
+			return (1);
+		else
+			return (-1);
+	}
+	return (0);
 }
 
 int	ft_atoi(const char *str)
 {
 	const char	*start;
-	const char	*end;
 	int			sign;
-	int			integer;
+	long long	pre;
+	int			digit;
+	int			overflow;
 
-	start = ft_isspace(str);
-	sign = 1;
-	if (*start == '+' || *start == '-')
+	start = ft_jump_spaces(str);
+	sign = ft_signer(*start);
+	if (sign && !ft_isdigit(*start))
+		start++;
+	pre = 0;
+	while (ft_isdigit(*start))
 	{
-		if (*start == '-')
-			sign = -1;
+		digit = *start - '0';
+		overflow = ft_overflow_check(pre, digit, sign);
+		if (overflow == 1)
+			return ((int)LLONG_MAX);
+		if (overflow == -1)
+			return ((int)LLONG_MIN);
+		pre = pre * 10 + digit;
 		start++;
 	}
-	end = start;
-	while (*end && (*end >= '0' && *end <= '9'))
-		end++;
-	integer = 0;
-	while (*start && start != end)
-	{
-		integer = integer * 10 + *start - '0';
-		start++;
-	}
-	integer = integer * sign;
-	return (integer);
+	pre = pre * sign;
+	return ((int)pre);
 }
