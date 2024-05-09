@@ -32,6 +32,7 @@ bonus: .bonus
 #.bonus calls libft.a and all of the bonus objects
 .bonus: $(NAME) $(B_OBJECTS)
 	$(AR) $(NAME) $(B_OBJECTS)
+	@touch .bonus
 
 #libft.a calls all of the mandatory objects
 $(NAME): $(OBJECTS)
