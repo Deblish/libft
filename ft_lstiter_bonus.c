@@ -10,17 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** @description
-** Function description.
-**
-** @param
-** paramName Description of the parameter.
-**
-** @return
-** Description of the return value.
-*/
-
 #include "libft.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
