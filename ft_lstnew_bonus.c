@@ -6,15 +6,14 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:10:58 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/30 16:23:47 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/06/12 07:57:22 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 ** @brief
-** Allocates (with malloc(3)) and returns a new node.
-** The member variable ’content’ is initialized with
-** the value of the parameter ’content’. The variable
+** Allocates and returns a new node. The member variable ’content’ is 
+** initialized with the value of the parameter ’content’. The variable
 ** ’next’ is initialized to NULL.
 **
 ** @param 
