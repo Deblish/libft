@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:12:08 by aapadill          #+#    #+#             */
-/*   Updated: 2024/04/30 16:30:09 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/06/12 17:48:32 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	if (new == NULL)
 		return ;
 	if (*lst == NULL)
+	{
 		*lst = new;
+		return ;
+	}
 	if (temp && new)
 	{
 		while (temp->next != NULL)
