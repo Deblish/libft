@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 14:59:00 by aapadill          #+#    #+#             */
-/*   Updated: 2024/05/05 11:22:59 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/07/01 11:54:29 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,13 @@ static int	splitter(char **words, char const *s, char c, size_t q_words)
 	return (0);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c, int *n)
 {
 	size_t	q_words;
 	char	**words;
 
 	q_words = word_counter(s, c);
+	*n = (int)q_words;
 	words = malloc((q_words + 1) * sizeof(char *));
 	if (!words)
 		return (NULL);
