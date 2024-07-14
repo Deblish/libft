@@ -40,7 +40,6 @@ static int	ft_overflow_check(long value, int digit, int sign)
 	return (0);
 }
 
-/*
 int	ft_atoi(const char *str)
 {
 	const char	*start;
@@ -68,14 +67,14 @@ int	ft_atoi(const char *str)
 	pre = pre * sign;
 	return ((int)pre);
 }
-*/
 
-int	ft_atoi(const char *str, int *overflow)
+int	ft_atoi_overflow(const char *str)
 {
 	const char	*start;
 	int			sign;
 	long		pre;
 	int			digit;
+	int			overflow;
 
 	start = ft_jump_spaces(str);
 	sign = ft_signer(*start);
@@ -85,13 +84,13 @@ int	ft_atoi(const char *str, int *overflow)
 	while (ft_isdigit(*start))
 	{
 		digit = *start - '0';
-		*overflow = ft_overflow_check(pre, digit, sign);
-		if (*overflow == 1)
-			return ((int)LONG_MAX);
-		if (*overflow == -1)
-			return ((int)LONG_MIN);
+		overflow = ft_overflow_check(pre, digit, sign);
+		if (overflow == 1)
+			return (1);
+		if (overflow == -1)
+			return (1);
 		pre = pre * 10 + digit;
 		start++;
 	}
-	return ((int)pre * sign);
+	return (0);
 }
