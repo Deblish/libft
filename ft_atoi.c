@@ -68,6 +68,18 @@ int	ft_atoi(const char *str)
 	return ((int)pre);
 }
 
+static int	ft_overflow_check_int(long value, int digit, int sign)
+{
+	if (value > INT_MAX / 10 || (value == INT_MAX / 10 && digit > '7'))
+	{
+		if (sign == 1)
+			return (1);
+		else
+			return (-1);
+	}
+	return (0);
+}
+
 int	ft_atoi_overflow(const char *str)
 {
 	const char	*start;
@@ -84,7 +96,7 @@ int	ft_atoi_overflow(const char *str)
 	while (ft_isdigit(*start))
 	{
 		digit = *start - '0';
-		overflow = ft_overflow_check(pre, digit, sign);
+		overflow = ft_overflow_check_int(pre, digit, sign);
 		if (overflow)
 			return (1);
 		pre = pre * 10 + digit;
