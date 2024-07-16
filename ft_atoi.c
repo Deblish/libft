@@ -85,9 +85,7 @@ int	ft_atoi_overflow(const char *str)
 	{
 		digit = *start - '0';
 		overflow = ft_overflow_check(pre, digit, sign);
-		if (overflow == 1)
-			return (1);
-		if (overflow == -1)
+		if (overflow)
 			return (1);
 		pre = pre * 10 + digit;
 		start++;
