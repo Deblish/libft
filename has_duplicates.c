@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   has_duplicates.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: aapadill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/23 12:15:04 by aapadill          #+#    #+#             */
-/*   Updated: 2024/07/19 16:28:52 by aapadill         ###   ########.fr       */
+/*   Created: 2024/07/19 16:09:43 by aapadill          #+#    #+#             */
+/*   Updated: 2024/07/19 16:25:18 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char	*s1, const char	*s2, size_t n)
+int	has_duplicates(int i, char **argv)
 {
-	unsigned char	*x1;
-	unsigned char	*x2;
+	int j;
+	int max;
 
-	x1 = (unsigned char *)s1;
-	x2 = (unsigned char *)s2;
-	while ((*x1 || *x2) && n)
+	j = i - 1;
+	while (i && j)
 	{
-		if (*x1 != *x2)
-			return (*x1 - *x2);
-		x1++;
-		x2++;
-		n--;
+		max = ft_strlen(argv[i]) + ft_strlen(argv[j]);
+		if (!ft_strncmp(argv[i], argv[j], max))
+			return (1);
+		j--;
 	}
 	return (0);
 }
