@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 12:55:08 by aapadill          #+#    #+#             */
-/*   Updated: 2024/07/19 08:42:21 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/07/19 10:12:10 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,6 @@ int	ft_atoi_overflow(const char *str)
 	sign = ft_signer(*start);
 	if (sign && !ft_isdigit(*start))
 		start++;
-	if (!ft_isdigit(*start))
-		return (1);
 	pre = 0;
 	while (ft_isdigit(*start))
 	{
@@ -104,5 +102,7 @@ int	ft_atoi_overflow(const char *str)
 		pre = pre * 10 + digit;
 		start++;
 	}
+	if (*start && !ft_isdigit(*start))
+		return (1);
 	return (0);
 }
