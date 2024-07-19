@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 12:55:08 by aapadill          #+#    #+#             */
-/*   Updated: 2024/07/05 15:56:45 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/07/19 08:42:21 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,10 @@ static int	ft_signer(const char c)
 	return (0);
 }
 
+//fix, -2147483648 might be wrong
 static int	ft_overflow_check(long value, int digit, int sign)
 {
-	if (value > LONG_MAX / 10 || (value == LONG_MAX / 10 && digit > '7'))
+	if (value > LONG_MAX / 10 || (value == LONG_MAX / 10 && digit > 7))
 	{
 		if (sign == 1)
 			return (1);
@@ -70,13 +71,12 @@ int	ft_atoi(const char *str)
 
 static int	ft_overflow_check_int(long value, int digit, int sign)
 {
-	if (value > INT_MAX / 10 || (value == INT_MAX / 10 && digit > '7'))
-	{
+	if (value > INT_MAX / 10 || (value == INT_MAX / 10 && digit > 7))
 		if (sign == 1)
 			return (1);
-		else
-			return (-1);
-	}
+	if (value > INT_MAX / 10 || (value == INT_MAX / 10 && digit > 8))
+		if (sign == -1)
+			return (1);
 	return (0);
 }
 
@@ -92,6 +92,8 @@ int	ft_atoi_overflow(const char *str)
 	sign = ft_signer(*start);
 	if (sign && !ft_isdigit(*start))
 		start++;
+	if (!ft_isdigit(*start))
+		return (1);
 	pre = 0;
 	while (ft_isdigit(*start))
 	{
