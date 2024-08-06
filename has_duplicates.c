@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 17:40:12 by aapadill          #+#    #+#             */
-/*   Updated: 2024/08/05 16:04:51 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/08/06 17:51:22 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	has_duplicates(int i, char **argv)
 {
-	int j;
+	int	j;
 
 	j = i - 1;
 	while (i && j)

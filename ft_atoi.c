@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 12:55:08 by aapadill          #+#    #+#             */
-/*   Updated: 2024/08/05 16:03:54 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/08/06 17:53:47 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,11 @@ static int	ft_signer(const char c)
 	return (0);
 }
 
-//-9223372036854775808 might be wrong
+/*
+** @error
+** -9223372036854775808 might be wrong
+*/
+
 static int	ft_overflow_check(long value, int digit, int sign)
 {
 	if (value > LONG_MAX / 10 || (value == LONG_MAX / 10 && digit > 7))
