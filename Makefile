@@ -80,7 +80,7 @@ $(EXECUTABLE): $(OBJECTS)
 
 #any object calls its equivalent source code
 %.o: %.c
-	cc $(CFLAGS) -c $?
+	cc $(CFLAGS) -c $< -o $@
 
 #clean removes all objects, and the .bonus file
 clean:
