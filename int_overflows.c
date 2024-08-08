@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 17:43:48 by aapadill          #+#    #+#             */
-/*   Updated: 2024/07/19 17:45:01 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/08/08 12:32:55 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int	int_overflows(const char *str)
 	sign = ft_signer(*start);
 	if (sign && !ft_isdigit(*start))
 		start++;
+	if (!ft_isdigit(*start))
+		return (1);
 	pre = 0;
 	while (ft_isdigit(*start))
 	{
