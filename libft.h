@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:48:55 by aapadill          #+#    #+#             */
-/*   Updated: 2024/08/06 18:00:16 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/08/21 12:13:21 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdint.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 100
+# endif
 
 typedef struct s_list
 {
@@ -73,5 +77,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 int		has_duplicates(int i, char **argv);
 int		int_overflows(const char *str);
+
+char	*ft_strjoin_gnl(char *s1, char *s2);
+char	*get_next_line(int fd);
 
 #endif
