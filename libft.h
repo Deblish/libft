@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 14:48:55 by aapadill          #+#    #+#             */
-/*   Updated: 2024/08/21 12:13:21 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/08/29 11:23:14 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 100
+# endif
+
+# ifndef OPEN_MAX
+#  define OPEN_MAX 1024
 # endif
 
 typedef struct s_list
