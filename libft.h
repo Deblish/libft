@@ -85,5 +85,5 @@ int		int_overflows(const char *str);
 char	*ft_strjoin_gnl(char *s1, char *s2);
 char	*get_next_line(int fd);
 
-long		ft_atoi_base(const char *str, int base);
+long	ft_atoi_base(const char *str, int base);
 #endif

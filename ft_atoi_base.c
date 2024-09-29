@@ -16,10 +16,10 @@
 ** @error
 ** -9223372036854775808 might be wrong
 */
-
 static int	ft_overflow_check(long value, int digit, int base)
 {
-	if (value > LONG_MAX / base || (value == LONG_MAX / base && digit > LONG_MAX % base))
+	if ((value == LONG_MAX / base && digit > LONG_MAX % base)
+		|| value > LONG_MAX / base)
 		return (1);
 	return (0);
 }

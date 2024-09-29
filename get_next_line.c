@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/09 16:02:10 by aapadill          #+#    #+#             */
-/*   Updated: 2024/08/21 12:11:29 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/09/19 16:29:48 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ static char	*ft_read(int fd, char *buffer)
 {
 	char	*aux;
 	ssize_t	bytes_read;
-	char	stopper;
+	int		stopper;
 
 	aux = malloc(BUFFER_SIZE + sizeof(char));
 	if (!aux)
