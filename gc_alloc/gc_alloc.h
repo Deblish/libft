@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:23:36 by aapadill          #+#    #+#             */
-/*   Updated: 2024/11/08 13:16:51 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/11/30 15:21:31 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct s_garbage_collector
 
 void	*gc_alloc(size_t size);
 void	gc_free(void *ptr);
+void	gc_free_array(int n, void **ptr_array);
 void	gc_free_all(void);
 
 char	*gc_itoa(int n);

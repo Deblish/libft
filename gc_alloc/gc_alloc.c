@@ -6,7 +6,7 @@
 /*   By: aapadill <aapadill@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 11:37:44 by aapadill          #+#    #+#             */
-/*   Updated: 2024/11/08 13:04:10 by aapadill         ###   ########.fr       */
+/*   Updated: 2024/11/30 15:22:00 by aapadill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,13 @@ void	gc_free(void *ptr)
 		prev = curr;
 		curr = curr->next;
 	}
+}
+
+void	gc_free_array(int n, void **ptr_array)
+{
+	while (n--)
+		gc_free(ptr_array[n]);
+	gc_free(ptr_array);
 }
 
 /*
